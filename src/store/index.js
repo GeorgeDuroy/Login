@@ -1,0 +1,82 @@
+//注册数据储存在这儿 
+import { createStore } from "vuex";
+import axios from "axios";
+const store=createStore({
+  state(){
+    return{
+      token:'',
+      signUped:false,
+      name:'',
+      nick:'',
+      profile:'',
+      schNo:'',
+      gender:'',
+      insit:'',
+      selfIntro:'',
+      phoneNo:'',
+      qqNo:'',
+      wechatNo:'',
+      pswd:'',
+    }
+  },
+  mutations:{
+    setName(state,name){
+      state.name=name
+    },
+    setNick(state,nick){
+      state.nick=nick
+    },
+    setProfile(state,profile){
+      state.profile=profile
+    },
+    setGendern(state,gender){
+      state.gender=gender
+    },
+    setInsit(state,insit){
+      state.insit=insit
+    },
+    setSelfIntro(state,selfIntro){
+      state.selfIntro=selfIntro
+    },
+    setPhoneNon(state,phoneNo){
+      state.phoneNo=phoneNo
+    },
+    setQqNo(state,qqNo){
+      state.qqNo=qqNo
+    },
+    setWechatNo(state,wechatNo){
+      state.wechatNo=wechatNo
+    },
+    setLogin(state,denglu){
+      state.schNo=denglu.account
+      state.pswd=denglu.password
+    },
+    setToken(state,token){
+      state.token=token
+    },
+    setTrue(state){
+      state.signUped=true
+    }
+  },
+  actions:{
+    //登录函数
+    async loginPost(context){
+      const login=await axios.get('http://localhost:3000/api/users/login',{schNo:context.state.schNo,pswd:context.state.pswd});
+      if(login.data.pass==true){
+        context.commit('setTrue')
+        context.commit('setToken',login.data.token)
+        context.commit('setName',login.data.name)
+        context.commit('setNick',login.data.nick)
+        context.commit('setProfile',login.data.profile)
+        context.commit('setGendern',login.data.gender)
+        context.commit('setInsit',login.data.insit)
+        context.commit('setSelfIntro',login.data.selfIntro)
+        context.commit('setPhoneNon',login.data.phoneNo)
+        context.commit('setQqNo',login.data.qqNo)
+        context.commit('setWechatNo',login.data.wechatNo)
+        window.localStorage.setItem("token",login.data.token);
+      }
+    }
+  }
+})
+export default store
