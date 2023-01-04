@@ -67,7 +67,7 @@ export default {
           this.regContent.schNo = this.ruleForm.username
           this.regContent.nick = this.ruleForm.nickname
           this.regContent.pswd = this.ruleForm.pass
-          this.regContent.gender = this.options.value == 1 ? '男' : '女'
+          this.regContent.gender = this.options.value == 1 ? '男' : '女'//url改成后端
           const reg = await axios.post('http://localhost:3000/api/users/reg', this.regContent)
           if (reg.data.pass == true) {
             this.$message.success('注册成功')

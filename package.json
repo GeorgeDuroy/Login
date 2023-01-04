@@ -12,8 +12,7 @@
     "element-plus": "^2.2.27",
     "vform3-builds": "^3.0.9",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

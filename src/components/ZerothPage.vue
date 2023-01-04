@@ -1,6 +1,7 @@
 <script>
 //打开应用的首页
 import { ElButton } from 'element-plus'
+import axios from 'axios'
 export default{
   components: { ElButton },
   methods:{
@@ -11,11 +12,10 @@ export default{
       this.$router.push('/FirstPage')
     },
   },
-  mounted() {
-    //如果本地已有token则直接跳转到home页，把store的token设置上
-      if(window.localStorage.getItem("token")){
-        const token=window.localStorage.getItem("token")
-        this.$store.commit('setToken',token)
+  async mounted() {
+    //后端校验token，通过则直接跳转Home
+      if(await axios.get("url",window.localStorage.getItem("user").token).data.pass==true){
+        //改为Home
         this.$router.push('/FirstPage')
     }
   },
