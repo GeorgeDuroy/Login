@@ -41,3 +41,77 @@ export default {
     </div>
   </div>
 </template>
+<style scoped>
+.mbody{
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/bgp.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: auto;
+}
+.buttons {
+  display: flex;
+  margin-top: 90%;
+  height: 10%;
+}
+
+#junren {
+  text-align: center;
+  color: white;
+  background-image: url("../assets/buttonbgp.png");
+  background-repeat: no-repeat;
+  width: 60%;
+  border-radius: 20%;
+  margin-left: 3%;
+}
+
+.icon1 {
+  display: block;
+  margin: auto;
+}
+
+#shetuan {
+  text-align: center;
+  color: white;
+  background-image: url("../assets/buttonbgp.png");
+  background-repeat: no-repeat;
+  width: 60%;
+  border-radius: 20%;
+  margin-left: 5%;
+}
+
+.icon2 {
+  display: block;
+  margin: auto;
+}
+
+#putongren {
+  text-align: center;
+  color: white;
+  background-image: url("../assets/buttonbgp.png");
+  background-repeat: no-repeat;
+  width: 60%;
+  border-radius: 20%;
+  margin-left: 5%;
+}
+
+.icon3 {
+  display: block;
+  margin: auto;
+}
+
+.logobox {
+  display: flex;
+  padding:0 30%;
+}
+.logo{
+  border-radius: 10%;
+  width:93%;
+}
+#occu{
+  width: 1%;
+  margin: 0 1%;
+}
+</style>
