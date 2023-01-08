@@ -35,7 +35,7 @@ export default {
       res=await axious.get("url",{schNo,pswd})
       setTimeout(() => {
         if(res.data.pass==true){
-          window.localStorage.setItem("user",res.data)
+          window.localStorage.setItem("user",JSON.stringify(res.data))
           this.$message.success("登录成功")
           setTimeout(() => {
             //改为跳转到Home

@@ -10,7 +10,6 @@
   "dependencies": {
     "axios": "^1.2.1",
     "element-plus": "^2.2.27",
-    "vform3-builds": "^3.0.9",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

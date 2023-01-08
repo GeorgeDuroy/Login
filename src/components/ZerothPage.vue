@@ -14,9 +14,9 @@ export default{
   },
   async mounted() {
     //后端校验token，通过则直接跳转Home
-      if(await axios.get("url",window.localStorage.getItem("user").token).data.pass==true){
+      if(await axios.get("url",JSON.parse(window.localStorage.getItem("user")).token).data.pass==true){
         //改为Home
-        this.$router.push('/FirstPage')
+        this.$router.push('/')
     }
   },
 }

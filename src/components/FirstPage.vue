@@ -3,16 +3,16 @@
 export default {
   methods: {
     regi_junren() {
-      this.$router.push("/FirstPage/junren");
+      this.$router.push("/FirstPage/junren")
     },
     regi_shetuan() {
-      this.$router.push("/FirstPage/shetuan");
+      this.$message.warning("请联系开发者")
     },
     regi_putongren() {
-      this.$router.push("/FirstPage/putongren");
+      this.$router.push("/FirstPage/putongren")
     },
     returnBack() {
-      this.$router.push("/");
+      this.$router.push("/")
     },
   },
 };
